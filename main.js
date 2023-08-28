@@ -24,7 +24,7 @@ const takeConcurrentlyHelper = (course_a, course_b) => {
     if (!takeConcurrentlyHelper(c, course_b))
       return false
   }
-  // no prereqs for course_a
+  
   return true;
 }
 
