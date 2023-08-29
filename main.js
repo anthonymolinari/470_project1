@@ -28,7 +28,12 @@ const takeConcurrentlyHelper = (course_a, course_b) => {
   return true;
 }
 
-const takeConcurrently = (course_a, course_b) => takeConcurrentlyHelper(`CS ${course_a}`, `CS ${course_b}`);
+const takeConcurrently = (course_a, course_b) => {
+  return (
+    takeConcurrentlyHelper(`CS ${course_a}`, `CS ${course_b}`)
+    && takeConcurrentlyHelper(`CS ${course_b}`, `CS ${course_a}`)
+  );
+}
   
 if (process.argv.length < 4) {
   console.error('Expected at least two arguments. Exiting...')
@@ -37,7 +42,7 @@ if (process.argv.length < 4) {
 
 const args = [process.argv[2],process.argv[3]];
 
-if (takeConcurrently(args[0], args[1]) && takeConcurrently(args[1], args[0]))
+if (takeConcurrently(args[0], args[1]))
   console.log(`${args[0]} and ${args[1]} can be taken concurrenyly`);
 else
   console.log(`${args[0]} and ${args[1]} can not be taken concurrenyly`);
