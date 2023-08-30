@@ -1,6 +1,6 @@
-// CS-470 project 1
+// CS-470 project 1: Can be taken concurrently
 // author: Anthony Molinari
-
+// Fall 2023
 const course_data = require('./cs_prerequisites.json');
 
 const findPreReqs = (course) => {
@@ -14,6 +14,7 @@ const findPreReqs = (course) => {
   return prereqs;
 }
 
+// Breadth first traversial of prereq chains
 const takeConcurrentlyHelper = (course_a, course_b) => {  
   if (course_a === course_b)
     return false;
