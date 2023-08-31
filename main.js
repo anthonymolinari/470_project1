@@ -44,6 +44,6 @@ if (process.argv.length < 4) {
 const args = [process.argv[2],process.argv[3]];
 
 if (takeConcurrently(args[0], args[1]))
-  console.log(`${args[0]} and ${args[1]} can be taken concurrenyly`);
+  console.log(`${args[0]} and ${args[1]} can be taken concurrently`);
 else
-  console.log(`${args[0]} and ${args[1]} can not be taken concurrenyly`);
+  console.log(`${args[0]} and ${args[1]} can not be taken concurretly`);
